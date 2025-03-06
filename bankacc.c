@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include<stdbool.h>
 
-#define MAX_TRANSACTIONS 30
+#define MAX_TRANSACTIONS 40
 #define MAX_ACCOUNT 2
 #define Min_Pass_length 8
 
