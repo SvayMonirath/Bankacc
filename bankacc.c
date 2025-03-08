@@ -107,9 +107,10 @@ int main(void) {
 
                 } while (choice != 5);
 
-            } else if(current_account = -2) {
+            } else if(current_account == -2) {
                 AdminMenu(account, account_count, history, transaction_count);
             }
+
             break;
         case 3:
             system("cls");
@@ -138,7 +139,7 @@ int isValidPassword(const char *password) {
         return false;
     }
 
-    for (int i = false; password[i] != '\0'; i++) {
+    for (int i = 0; password[i] != '\0'; i++) {
         if (isupper(password[i])) hasUpper = true;
         if (islower(password[i])) hasLower = true;
         if (isdigit(password[i])) hasDigit = true;
