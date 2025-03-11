@@ -2,6 +2,7 @@
 
 #include "transaction.h"
 #include"function.h"
+#include"account.h"
 
 void viewTransactionHistory(int transaction_count, Transaction history[]) {
     ClearSystem();
@@ -10,9 +11,9 @@ void viewTransactionHistory(int transaction_count, Transaction history[]) {
     } else {
         printf("\nTransaction History:\n");
         for (int i = 0; i < transaction_count; i++) {
-            printf("%s: %.2f USD, Balance after: %.2f USD\n", history[i].type, history[i].amount, history[i].balance);
+            printf("%s: %.2f USD, Balance after: %.2f USD\n", 
+                   history[i].type, history[i].amount, history[i].balance);
         }
     }
-
-     PauseSystem();
+    PauseSystem();
 }

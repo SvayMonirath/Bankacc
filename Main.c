@@ -45,7 +45,7 @@ int main() {
                             checkBalance(current_account, account);
                             break;
                         case 4:
-                            viewTransactionHistory(current_account, history);
+                            viewTransactionHistory(transaction_count, history);
                             break;
                         case 5:
                             TransferMoney(current_account, account, history, &transaction_count, account_count);
