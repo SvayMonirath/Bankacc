@@ -16,18 +16,49 @@ int main() {
     do {
         ClearSystem();
         printf("Welcome to the Banking System\n");
-        printf("1. Sign In (Create a new account)\n");
-        printf("2. Login (Existing account)\n");
+        printf("1. Sign Up (Create a new account)\n");
+        printf("2. Log In (Existing account)\n");
         printf("3. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
         if (choice == 1) {
-            SignIn(account, &account_count);
+            SignUp(account, &account_count);
         } else if (choice == 2) {
             current_account = Login(account, account_count);
             if (current_account == -2) {
                 AdminMenu(account, account_count, history, transaction_count);
+            } else if (current_account >= 0) { // Regular user logged in
+                int menu_choice;
+                do {
+                    DisplayMenu(account, current_account);
+                    scanf("%d", &menu_choice);
+
+                    switch (menu_choice) {
+                        case 1:
+                            DepositMoney(current_account, account, history, &transaction_count);
+                            break;
+                        case 2:
+                            WithDrawMoney(current_account, account, history, &transaction_count);
+                            break;
+                        case 3:
+                            checkBalance(current_account, account);
+                            break;
+                        case 4:
+                            viewTransactionHistory(current_account, history);
+                            break;
+                        case 5:
+                            TransferMoney(current_account, account, history, &transaction_count, account_count);
+                            break;
+                        case 6:
+                            printf("\nLogging out...\n");
+                            break;
+                        default:
+                            printf("Invalid option! Try again.\n");
+                    }
+                } while (menu_choice != 6);
+            } else {
+                printf("Login failed. Try again.\n");
             }
         }
     } while (choice != 3);

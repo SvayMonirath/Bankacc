@@ -25,7 +25,7 @@ int isValidPassword(const char *password) {
     return hasUpper && hasLower && hasDigit && hasSpecial;
 }
 
-// Function implementations for SignIn, Login, DepositMoney, WithdrawMoney, etc.
+// Function implementations for SignUp, Login, DepositMoney, WithdrawMoney, etc.
 
 // Function to display the menu
 void DisplayMenu(ACCOUNT *account, int current_account) {
@@ -180,7 +180,7 @@ void checkBalance(int current_account, ACCOUNT account[]) {
 
 //sign in function 
 
-void SignIn(ACCOUNT *account, int *account_count) {
+void SignUp(ACCOUNT *account, int *account_count) {
 
     ClearSystem();
     if (*account_count >= MAX_ACCOUNT) {

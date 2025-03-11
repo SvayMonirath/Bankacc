@@ -18,7 +18,7 @@ typedef struct {
 } ACCOUNT;
 
 // Function prototypes
-void SignIn(ACCOUNT *account, int *account_count);
+void SignUp(ACCOUNT *account, int *account_count);
 int Login(ACCOUNT *account, int account_count);
 int isValidPassword(const char *password);
 void DisplayMenu(ACCOUNT *account, int current_account);
