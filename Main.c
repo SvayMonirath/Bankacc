@@ -3,7 +3,7 @@
 #include "account.h"
 #include "admin.h"
 #include "function.h"
-#include "FileOperation.h"
+
 
 int main() {
     int choice, current_account, transaction_count = 0, account_count = 2;
@@ -13,8 +13,6 @@ int main() {
         {"Rath", 200, "Rothmony12!", 300.00}
     };
 
-    // Load saved account details from file
-    LoadAccountDetails(account, &account_count);
 
     do {
         ClearSystem();
@@ -61,8 +59,6 @@ int main() {
                     }
                 } while (menu_choice != 6);
 
-                // Save account details after the user logs out
-                SaveAccountDetails(account, account_count);
             } else {
                 printf("Login failed. Try again.\n");
             }
